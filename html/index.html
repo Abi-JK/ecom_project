@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Welcome to ShopEase</title>
+    <style>
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            overflow: hidden;
+            color: white;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            height: 100vh;
+            padding: 20px;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url(../images/ecommerce.jpg) no-repeat center center/cover;
+            filter: brightness(0.35) saturate(1.2);
+            z-index: -1;
+            transition: filter 0.3s ease;
+        }
+
+        .content-wrapper {
+            background: rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-radius: 15px;
+            padding: 40px 50px;
+            max-width: 600px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.6);
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            font-weight: 900;
+            letter-spacing: 0.05em;
+            text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.8);
+        }
+
+        p {
+            font-size: 1.3rem;
+            margin-bottom: 2.5rem;
+            font-weight: 500;
+            text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6);
+        }
+
+        .enter-button {
+            background: linear-gradient(135deg, #ffd700, #e6c200);
+            color: #333;
+            font-weight: 700;
+            padding: 18px 50px;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            font-size: 1.5rem;
+            box-shadow: 0 6px 18px rgba(255, 215, 0, 0.7);
+            transition: all 0.3s ease;
+            user-select: none;
+        }
+
+        .enter-button:hover {
+            background: linear-gradient(135deg, #e6c200, #b38f00);
+            box-shadow: 0 10px 25px rgba(179, 143, 0, 0.8);
+            transform: translateY(-3px);
+        }
+
+        /* Responsive */
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            p {
+                font-size: 1rem;
+                margin-bottom: 2rem;
+            }
+
+            .enter-button {
+                padding: 14px 40px;
+                font-size: 1.2rem;
+            }
+
+            .content-wrapper {
+                max-width: 90%;
+                padding: 30px 25px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="content-wrapper">
+        <h1>Welcome to ShopEase</h1>
+        <p>Your one-stop shop for everything you love</p>
+        <button class="enter-button" onclick="location.href='home.html'">Enter Site</button>
+    </div>
+</body>
+
+</html>

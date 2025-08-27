@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Sign In</title>
+
+    <!-- Font Awesome CDN for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+        body {
+            background-color: aliceblue;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Navbar styles */
+        nav.menu-bar {
+            width: 100%;
+            background-color: #c179dd;
+            height: 60px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        ul.menu-items {
+            list-style-type: none;
+            display: flex;
+            gap: 30px;
+            margin: 0;
+            padding: 0;
+        }
+
+        li.menu-item a {
+            text-decoration: none;
+            color: white;
+            font-size: 18px;
+            font-family: 'Times New Roman', Times, serif;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            transition: color 0.3s ease;
+        }
+
+        li.menu-item a:hover {
+            color: #ffd700;
+        }
+
+        /* Sign-in form container */
+        .main {
+            background-color: white;
+            width: 400px;
+            margin: 80px auto;
+            box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+            border-radius: 8px;
+            padding: 20px;
+        }
+
+        .sign {
+            color: blueviolet;
+            font-size: 24px;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .un {
+            width: 85%;
+            border: none;
+            padding: 10px 15px;
+            margin: 10px auto;
+            display: block;
+            border-radius: 5px;
+            box-shadow: 1px 1px 3px gray;
+        }
+
+        #web {
+            background-color: blueviolet;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+            display: block;
+            margin: 20px auto 0;
+            font-weight: bold;
+        }
+
+        #web:hover {
+            background-color: indigo;
+        }
+
+        @media (max-width: 768px) {
+            .main {
+                width: 90%;
+            }
+
+            ul.menu-items {
+                flex-direction: column;
+                align-items: center;
+                gap: 15px;
+            }
+
+            nav.menu-bar {
+                height: auto;
+                padding: 10px 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="menu-bar">
+        <ul class="menu-items">
+            <li class="menu-item"><a href="index.html"><i class="fas fa-home"></i>Home</a></li>
+            <li class="menu-item"><a href="products.html"><i class="fas fa-box"></i>Products</a></li>
+            <li class="menu-item"><a href="signin.html"><i class="fas fa-sign-in-alt"></i>Sign In</a></li>
+            <li class="menu-item"><a href="contact.html"><i class="fas fa-envelope"></i>Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Sign-In Form -->
+    <div class="main">
+        <p class="sign">SIGN IN</p>
+        <form class="form1" method="POST" action="../form.php">
+            <input class="un" name="firstname" placeholder="Enter your First Name" required>
+            <input class="un" name="lastname" placeholder="Enter your Last Name" required>
+            <input type="password" class="un" name="pass" placeholder="Enter Password (min 6)" required minlength="6">
+            <input type="submit" id="web" value="Sign In">
+        </form>
+    </div>
+
+</body>
+
+</html>
