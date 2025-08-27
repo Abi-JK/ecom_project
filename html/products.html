@@ -5,6 +5,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Product Catalog</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
 
     <style>
         body {
@@ -125,92 +128,188 @@
                 max-height: 300px;
             }
         }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Navbar container */
+        nav.menu-bar {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+            max-width: 1200px;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            /* Dark translucent background with slight blur behind navbar */
+            background-color: rgba(42, 164, 201, 0.4);
+            backdrop-filter: blur(4px);
+            -webkit-backdrop-filter: blur(4px);
+            background-clip: padding-box;
+
+            border-radius: 0 0 12px 12px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+            z-index: 10;
+            padding: 0 20px;
+            box-sizing: border-box;
+        }
+
+        ul.menu-items {
+            list-style-type: none;
+            display: flex;
+            padding: 0;
+            margin: 0;
+            gap: 30px;
+        }
+
+        li.menu-item {
+            margin: 0;
+        }
+
+        /* Links with icons */
+        .menu-item a {
+            text-decoration: none;
+            color: white;
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 18px;
+            transition: color 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+        }
+
+        .menu-item a:hover {
+            color: #e7cb2b;
+            text-decoration: underline;
+        }
     </style>
 </head>
 
 <body>
-    <div class="container">
 
-        <!-- Repeat this block for each product -->
-        <div class="Product">
-            <div class="Product-image">
-                <img src="../images/t-shirt.jpg" alt="T-shirt" />
+    <div class="hero-section" role="main">
+        <nav class="menu-bar" role="navigation" aria-label="Main menu">
+            <ul class="menu-items">
+
+                <li class="menu-item"><a href="index.html"><i class="fas fa-home"></i>Home</a></li>
+                <li class="menu-item"><a href="products.html"><i class="fas fa-box-open"></i>Products</a></li>
+                <li class="menu-item"><a href="signin.html"><i class="fas fa-sign-in-alt"></i>Sign in</a></li>
+                <li class="menu-item"><a href="contact.html"><i class="fas fa-envelope"></i>Contact</a></li>
+                <li class="menu-item"><a href="cart.html"><i class="fas fa-cart-shopping"> </i>Add to cart</a></li>
+
+
+            </ul>
+        </nav>
+        <div class="container">
+
+            <!-- Repeat this block for each product -->
+            <div class="Product">
+                <div class="Product-image">
+                    <img src="../images/t-shirt.jpg" alt="T-shirt" />
+                </div>
+                <div class="Product-details">
+                    <h1>T-Shirt</h1>
+                    <p>Life is too short to wear boring T-shirts. Stay comfortable and stylish. A T-shirt can instantly
+                        boost your mood.</p>
+                    <p>Price: <span class="Product-price">$99.00</span></p>
+                    <button class="btn" onclick="addToCart(101,'T-Shirt',99)">Add To Cart</button>
+                </div>
             </div>
-            <div class="Product-details">
-                <h1>T-Shirt</h1>
-                <p>Life is too short to wear boring T-shirts. Stay comfortable and stylish. A T-shirt can instantly
-                    boost your mood.</p>
-                <p>Price: <span class="Product-price">$99.00</span></p>
-                <button class="btn">Add To Cart</button>
+
+            <div class="Product">
+                <div class="Product-image">
+                    <img src="../images/shoe.jpg" alt="Shoe" />
+                </div>
+                <div class="Product-details">
+                    <h1>Shoe</h1>
+                    <p>Shoes are more than just design — they influence your walk, posture, and personality. Step up in
+                        style and confidence.</p>
+                    <p>Price: <span class="Product-price">$99.00</span></p>
+                    <button class="btn" onclick="addToCart(102,'Shoe',99)">Add To Cart</button>
+                </div>
             </div>
+
+            <div class="Product">
+                <div class="Product-image">
+                    <img src="../images/waterbottle.webp" alt="Water Bottle" />
+                </div>
+                <div class="Product-details">
+                    <h1>Water Bottle</h1>
+                    <p>Sip happens! Stay hydrated. Drinking water is the ultimate multitasking — it quenches your thirst
+                        and
+                        keeps you energized.</p>
+                    <p>Price: <span class="Product-price">$45.00</span></p>
+                    <button class="btn" onclick="addToCart(103,'waterbottle',45)">Add To Cart</button>
+                </div>
+            </div>
+
+            <div class="Product">
+                <div class="Product-image">
+                    <img src="../images/bag.avif" alt="Bag" />
+                </div>
+                <div class="Product-details">
+                    <h1>Bag</h1>
+                    <p>These bags are thoughtfully crafted with the finest materials to offer both elegance and
+                        durability,
+                        perfect for everyday luxury.</p>
+                    <p>Price: <span class="Product-price">$95.00</span></p>
+                    <button class="btn" onclick="addToCart(104,'Bag',95)">Add To Cart</button>
+                </div>
+            </div>
+
+            <div class="Product">
+                <div class="Product-image">
+                    <img src="../images/ball.webp" alt="Ball" />
+                </div>
+                <div class="Product-details">
+                    <h1>Ball</h1>
+                    <p>Play like a pro! This ball is perfect for casual games or professional practice — built to
+                        last
+                        and
+                        perform on any surface.</p>
+                    <p>Price: <span class="Product-price">$25.00</span></p>
+                    <button class="btn" onclick="addToCart(105,'Ball',25)">Add To Cart</button>
+                </div>
+            </div>
+
+            <div class="Product">
+                <div class="Product-image">
+                    <img src="../images/shirt.jpg" alt="Shirt" />
+                </div>
+                <div class="Product-details">
+                    <h1>Shirt</h1>
+                    <p>Made for precision and class. This shirt offers a tailored fit, a strong collar, and fine
+                        stitching —
+                        the mark of true quality.</p>
+                    <p>Price: <span class="Product-price">$99.00</span></p>
+                    <button class="btn" onclick="addToCart(106,'Shirt',99)">Add To Cart</button>
+                </div>
+            </div>
+
         </div>
-
-        <div class="Product">
-            <div class="Product-image">
-                <img src="../images/shoe.jpg" alt="Shoe" />
-            </div>
-            <div class="Product-details">
-                <h1>Shoe</h1>
-                <p>Shoes are more than just design — they influence your walk, posture, and personality. Step up in
-                    style and confidence.</p>
-                <p>Price: <span class="Product-price">$99.00</span></p>
-                <button class="btn">Add To Cart</button>
-            </div>
-        </div>
-
-        <div class="Product">
-            <div class="Product-image">
-                <img src="../images/waterbottle.webp" alt="Water Bottle" />
-            </div>
-            <div class="Product-details">
-                <h1>Water Bottle</h1>
-                <p>Sip happens! Stay hydrated. Drinking water is the ultimate multitasking — it quenches your thirst and
-                    keeps you energized.</p>
-                <p>Price: <span class="Product-price">$45.00</span></p>
-                <button class="btn">Add To Cart</button>
-            </div>
-        </div>
-
-        <div class="Product">
-            <div class="Product-image">
-                <img src="../images/bag.avif" alt="Bag" />
-            </div>
-            <div class="Product-details">
-                <h1>Bag</h1>
-                <p>These bags are thoughtfully crafted with the finest materials to offer both elegance and durability,
-                    perfect for everyday luxury.</p>
-                <p>Price: <span class="Product-price">$95.00</span></p>
-                <button class="btn">Add To Cart</button>
-            </div>
-        </div>
-
-        <div class="Product">
-            <div class="Product-image">
-                <img src="../images/ball.webp" alt="Ball" />
-            </div>
-            <div class="Product-details">
-                <h1>Ball</h1>
-                <p>Play like a pro! This ball is perfect for casual games or professional practice — built to last and
-                    perform on any surface.</p>
-                <p>Price: <span class="Product-price">$25.00</span></p>
-                <button class="btn">Add To Cart</button>
-            </div>
-        </div>
-
-        <div class="Product">
-            <div class="Product-image">
-                <img src="../images/shirt.jpg" alt="Shirt" />
-            </div>
-            <div class="Product-details">
-                <h1>Shirt</h1>
-                <p>Made for precision and class. This shirt offers a tailored fit, a strong collar, and fine stitching —
-                    the mark of true quality.</p>
-                <p>Price: <span class="Product-price">$99.00</span></p>
-                <button class="btn">Add To Cart</button>
-            </div>
-        </div>
-
-    </div>
 </body>
+
+<script>
+    function addToCart(productId, name, price) {
+        let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+        let existing = cart.find(item => item.id === productId);
+        if (existing) {
+            existing.quantity += 1;
+        } else {
+            cart.push({ id: productId, name: name, price: price, quantity: 1 });
+        }
+
+        localStorage.setItem("cart", JSON.stringify(cart));
+        alert(name + " added to cart!");
+    }
+</script>
 
 </html>

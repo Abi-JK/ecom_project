@@ -10,7 +10,8 @@ $password = "your_mysql_password"; // Replace with your actual MySQL password
 $database = "ecommerce";
 
 // Create connection
-$conn = new mysqli($host, $username, $password, $database);
+
+    $conn = mysqli_connect("127.0.0.1", "root", "root123", "e-commerce", 3307);
 
 // Check connection
 if ($conn->connect_error) {
@@ -37,7 +38,7 @@ if (isset($_POST['name'], $_POST['email'], $_POST['message'])) {
 
             if ($stmt->execute()) {
                 echo "<h2 style='color: green; font-family: Arial;'>Thank you! Your message has been sent successfully.</h2>";
-                echo "<p><a href='index.html'>Return to Home</a></p>";
+             echo "<p><a href='/fullstack/html/index.html'>Return to Home</a></p>";
             } else {
                 echo "<h2 style='color: red;'>Oops! Something went wrong while saving your message.</h2>";
             }
